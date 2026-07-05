@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+
+    <record id="view_khachhang_tree" model="ir.ui.view">
+        <field name="name">khachhang.tree</field>
+        <field name="model">quanlykhachhang.khachhang</field>
+
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ma_khach_hang"/>
+                <field name="ten_khach_hang"/>
+                <field name="so_dien_thoai"/>
+                <field name="email"/>
+                <field name="nhan_vien_phu_trach"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+
+    <record id="view_khachhang_form" model="ir.ui.view">
+        <field name="name">khachhang.form</field>
+        <field name="model">quanlykhachhang.khachhang</field>
+
+        <field name="arch" type="xml">
+
+            <form>
+
+                <sheet>
+
+                    <group>
+
+                        <field name="ma_khach_hang"/>
+                        <field name="ten_khach_hang"/>
+                        <field name="so_dien_thoai"/>
+                        <field name="email"/>
+                        <field name="dia_chi"/>
+                        <field name="nhan_vien_phu_trach"/>
+
+                    </group>
+
+                    <notebook>
+
+                        <page string="Hồ sơ số hóa">
+
+                            <field name="van_ban_ids">
+
+                                <tree editable="bottom">
+
+                                    <field name="ma_van_ban"/>
+                                    <field name="ten_van_ban"/>
+                                    <field name="loai_van_ban"/>
+                                    <field name="ngay_tao"/>
+
+                                </tree>
+
+                            </field>
+
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+
+    <!-- Action -->
+
+    <record id="action_khachhang" model="ir.actions.act_window">
+        <field name="name">Khách Hàng</field>
+        <field name="res_model">quanlykhachhang.khachhang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+
+    <menuitem
+        id="menu_khachhang"
+        name="Danh Sách Khách Hàng"
+        parent="menu_quanlykhachhang_root"
+        action="action_khachhang"
+    />
+
+</odoo>

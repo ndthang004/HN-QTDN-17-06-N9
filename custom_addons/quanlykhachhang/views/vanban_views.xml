@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree View -->
+
+    <record id="view_vanban_tree" model="ir.ui.view">
+        <field name="name">vanban.tree</field>
+        <field name="model">quanlykhachhang.vanban</field>
+
+        <field name="arch" type="xml">
+
+            <tree>
+
+                <field name="ma_van_ban"/>
+                <field name="ten_van_ban"/>
+                <field name="khach_hang_id"/>
+                <field name="loai_van_ban"/>
+                <field name="ngay_tao"/>
+
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- Form View -->
+
+    <record id="view_vanban_form" model="ir.ui.view">
+        <field name="name">vanban.form</field>
+        <field name="model">quanlykhachhang.vanban</field>
+
+        <field name="arch" type="xml">
+
+            <form>
+
+                <sheet>
+
+                    <group>
+
+                        <field name="ma_van_ban"/>
+                        <field name="ten_van_ban"/>
+                        <field name="khach_hang_id"/>
+                        <field name="loai_van_ban"/>
+                        <field name="ngay_tao"/>
+
+                    </group>
+
+                    <group>
+
+                        <field name="tep_dinh_kem" filename="ten_tep"/>
+                        <field name="ten_tep"/>
+                        <field name="ghi_chu"/>
+
+                    </group>
+
+                </sheet>
+
+            </form>
+
+        </field>
+    </record>
+
+    <!-- Action -->
+
+    <record id="action_vanban" model="ir.actions.act_window">
+        <field name="name">Văn Bản</field>
+        <field name="res_model">quanlykhachhang.vanban</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+
+    <menuitem
+        id="menu_vanban"
+        name="Quản Lý Văn Bản"
+        parent="menu_quanlykhachhang_root"
+        action="action_vanban"
+    />
+
+</odoo>

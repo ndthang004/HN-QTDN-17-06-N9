@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_khachhang,access_khachhang,model_quanlykhachhang_khachhang,,1,1,1,1
+access_vanban,access_vanban,model_quanlykhachhang_vanban,,1,1,1,1
